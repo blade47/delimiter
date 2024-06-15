@@ -49,7 +49,7 @@ export default class Delimiter {
 
     this._CSS = {
       block: this.api.styles.block,
-      wrapper: 'delimiter MuiDivider-root MuiDivider-fullWidth css-sowgv4-MuiDivider-root'
+      wrapper: 'ce-delimiter'
     };
 
     this._data = {};
@@ -66,11 +66,7 @@ export default class Delimiter {
   drawView() {
     let hr = document.createElement('HR');
 
-    let classes = this._CSS.wrapper.split(" ");
-    classes.forEach(clazz => {
-      hr.classList.add(clazz);
-    });
-    hr.classList.add(this._CSS.block);
+    hr.classList.add(this._CSS.block, this._CSS.wrapper);
 
     return hr;
   }
